@@ -11,22 +11,15 @@ This wrapper allows you to use a local `sqlite3` database as a replacement for t
 ### **1. Run the Migration Script**
 When using the SQLite server for the first time, migrate your existing data from the Anvil DB to the local SQLite database.
 
-**Command:**
-```bash
 python migration_script.py
-Steps:
-
-Run the migration script to migrate all data to the SQLite database.
 The migration process may take 2-3 minutes depending on the size of your database.
 Once the migration is complete, manually stop the process (Ctrl + C on most systems).
+
 2. Start the Uplink Server
 Run the Uplink server to handle database interactions and media file management.
 
-Command:
-
-bash
-Copy code
 python uplink_server.py
+
 Steps:
 
 Configure the following parameters in uplink_server.py:
@@ -39,13 +32,9 @@ To use the SQLite wrapper in your Anvil app, replace all instances of the app_ta
 
 Before:
 
-python
-Copy code
 from anvil.tables import app_tables
 After:
 
-python
-Copy code
 from .wrapper import app_tables
 This ensures that your app interacts with the SQLite database through the wrapper.
 
@@ -67,7 +56,6 @@ Media Files Not Accessible: Verify the BASE_URL configuration and ensure the med
 Database Access Errors: Ensure the Uplink server is running and accessible by the Anvil app.
 
 Contributors
-Your Name - [Your Contact Info]
-
+Anmol Adarsh Kumar: anmol22081@iiitd.ac.in
 License
-This project is licensed under the MIT License. See the LICENSE file for details.
+Use as you want no license and guarantees
